@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aplikasi Diskon</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		alert("Welcome");
+	</script>
+	<script>
+		function hitung() {
+			var Harga=$('#Harga').val();
+			var Diskon=$('#Diskon').val();
+			var Hemat=Harga*Diskon/100;
+			$('#Hemat').val(Hemat);
+			var Hasil=Harga-Hemat;
+			$('#Hasil').val(Hasil);
+		}
+		function reset(){
+			Harga=$('#Harga').val(Harga);
+			Diskon=$('#Diskon').val(Diskon);
+			Hemat=$('#Hemat').val(0);
+			Hasil=$('#Hasil').val(0);
+		}
+	</script>
+</head>
+<body>
+	<fieldset style="width: 200px; margin: 0;">
+		<legend>Hitung Diskon</legend>
+
+		Harga<br>
+		<input type="number" placeholder="Harga" id="Harga" onchange="hitung()">Rp.<br>
+
+		Diskon<br>
+		<input type="number" placeholder="Diskon" id="Diskon" onchange="hitung()">%<br><br>
+
+		<input type="button" id="button" value="hitung" onclick="hitung()">
+		<input type="reset" value="reset" onclick="reset()"><br><br>
+
+		Harga Akhir<br>
+		<input type="text" id="Hasil" readonly=""><br>
+
+		Hemat <br>
+		<input type="text" id="Hemat" readonly=""><br>
+		
+	</fieldset>
+</body>
+</html>
